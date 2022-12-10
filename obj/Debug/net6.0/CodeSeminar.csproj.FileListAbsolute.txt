@@ -1,0 +1,15 @@
+C:\Users\levto\Desktop\CodeSeminar\bin\Debug\net6.0\CodeSeminar.exe
+C:\Users\levto\Desktop\CodeSeminar\bin\Debug\net6.0\CodeSeminar.deps.json
+C:\Users\levto\Desktop\CodeSeminar\bin\Debug\net6.0\CodeSeminar.runtimeconfig.json
+C:\Users\levto\Desktop\CodeSeminar\bin\Debug\net6.0\CodeSeminar.dll
+C:\Users\levto\Desktop\CodeSeminar\bin\Debug\net6.0\CodeSeminar.pdb
+C:\Users\levto\Desktop\CodeSeminar\obj\Debug\net6.0\CodeSeminar.csproj.AssemblyReference.cache
+C:\Users\levto\Desktop\CodeSeminar\obj\Debug\net6.0\CodeSeminar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\levto\Desktop\CodeSeminar\obj\Debug\net6.0\CodeSeminar.AssemblyInfoInputs.cache
+C:\Users\levto\Desktop\CodeSeminar\obj\Debug\net6.0\CodeSeminar.AssemblyInfo.cs
+C:\Users\levto\Desktop\CodeSeminar\obj\Debug\net6.0\CodeSeminar.csproj.CoreCompileInputs.cache
+C:\Users\levto\Desktop\CodeSeminar\obj\Debug\net6.0\CodeSeminar.dll
+C:\Users\levto\Desktop\CodeSeminar\obj\Debug\net6.0\refint\CodeSeminar.dll
+C:\Users\levto\Desktop\CodeSeminar\obj\Debug\net6.0\CodeSeminar.pdb
+C:\Users\levto\Desktop\CodeSeminar\obj\Debug\net6.0\CodeSeminar.genruntimeconfig.cache
+C:\Users\levto\Desktop\CodeSeminar\obj\Debug\net6.0\ref\CodeSeminar.dll

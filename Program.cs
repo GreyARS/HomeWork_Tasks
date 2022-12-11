@@ -31,6 +31,7 @@ bool Palyndrom = IsPal(num);
 */
 
 
+/*
 // Задача 21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
 double Range(double xA, double yA, double zA, double xB, double yB, double zB)
@@ -54,3 +55,25 @@ double zB = Convert.ToDouble(Console.ReadLine());
 
 double rangeAB = Range(xA, yA, zA, xB, yB, zB);
 Console.Write("Range of AB = " + rangeAB);
+*/
+
+
+// Задача 23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+void CubeNumber(int num)
+{
+    int current = 1;
+    int numCube = 0;
+
+    while(num >= current)
+    {
+        numCube = Convert.ToInt32(Math.Pow(current, 3));
+        Console.Write(numCube + " ");
+        current++;
+    }
+}
+
+Console.Write("Input a number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+CubeNumber(num);

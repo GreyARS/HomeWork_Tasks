@@ -1,79 +1,33 @@
-﻿/*
-// Задача 19: Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+﻿// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
 
-bool IsPal(int num)
+int ToDegree(int a, int b)
+
+// Через цикл for:
 {
-    int rev_num = 0;
-
-        while (num > 0) 
-        {
-            rev_num = rev_num * 10 + num % 10;
-            num = num / 10;
-        }
-    
-    if(num == rev_num)
+    int result = 1;
+    for(int count = 1; count <= b; count++)
     {
-        Console.WriteLine("Yes, this number is a palindrom.");
-        return true;
+        result *= a;
     }
-
-    else
-    {
-        Console.WriteLine("No, this number is not a palindrom.");
-        return false;
-    }
+    return result;
 }
 
-Console.Write("Input a number: ");
-int num = Convert.ToInt32(Console.ReadLine());
+// Либо через цикл while:
+// {
+//   int count = 1;
+//   int res = 1;
+//   while(count <= b)
+//   {
+//       res *= a;
+//       count++;
+//   }
+//   return res;
+//}
 
-bool Palyndrom = IsPal(num);
-*/
+Console.Write("Input a Number: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a Degree: ");
+int b = Convert.ToInt32(Console.ReadLine());
 
-
-/*
-// Задача 21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
-
-double Range(double xA, double yA, double zA, double xB, double yB, double zB)
-{
-    double lenght = Math.Sqrt(Math.Pow(xA - xB, 2) + Math.Pow(yA - yB, 2) + Math.Pow(zA - zB, 2));
-    return lenght;
-}
-
-Console.Write("Введите координату точки А по оси X: ");
-double xA = Convert.ToDouble(Console.ReadLine());
-Console.Write("Введите координату точки А по оси Y: ");
-double yA = Convert.ToDouble(Console.ReadLine());
-Console.Write("Введите координату точки А по оси Z: ");
-double zA = Convert.ToDouble(Console.ReadLine());
-Console.Write("Введите координату точки B по оси X: ");
-double xB = Convert.ToDouble(Console.ReadLine());
-Console.Write("Введите координату точки B по оси Y: ");
-double yB = Convert.ToDouble(Console.ReadLine());
-Console.Write("Введите координату точки B по оси Z: ");
-double zB = Convert.ToDouble(Console.ReadLine());
-
-double rangeAB = Range(xA, yA, zA, xB, yB, zB);
-Console.Write("Range of AB = " + rangeAB);
-*/
-
-
-// Задача 23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
-
-void CubeNumber(int num)
-{
-    int current = 1;
-    int numCube = 0;
-
-    while(num >= current)
-    {
-        numCube = Convert.ToInt32(Math.Pow(current, 3));
-        Console.Write(numCube + " ");
-        current++;
-    }
-}
-
-Console.Write("Input a number: ");
-int num = Convert.ToInt32(Console.ReadLine());
-
-CubeNumber(num);
+int result = ToDegree(a, b);
+Console.Write($"{a} to the {b} degree is " + result);

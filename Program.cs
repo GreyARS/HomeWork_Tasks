@@ -1,86 +1,42 @@
-﻿/*
-// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+﻿// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 
-int ToDegree(int a, int b)
-
-// Через цикл for:
+int[] CreateRandomArray(int size, int min = 100, int max = 1000)
 {
-    int result = 1;
-    for(int count = 1; count <= b; count++)
-    {
-        result *= a;
-    }
-    return result;
-}
+    int[] array = new int[size];
 
-// Либо через цикл while:
-// {
-//   int count = 1;
-//   int res = 1;
-//   while(count <= b)
-//   {
-//       res *= a;
-//       count++;
-//   }
-//   return res;
-//}
-
-Console.Write("Input a Number: ");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input a Degree: ");
-int b = Convert.ToInt32(Console.ReadLine());
-
-int result = ToDegree(a, b);
-Console.Write($"{a} to the {b} degree is " + result);
-*/
-
-
-/*
-// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
-
-int NumberSum(int num)
-{
-    int sum = 0;
-    for(int element = 0; num > 0; element++)
-    {
-        element = num % 10;
-        num = num / 10;
-        sum += element;
-    }
-    return sum;
-}
-
-Console.Write("Input a Number: ");
-int num = Convert.ToInt32(Console.ReadLine());
-
-int result = NumberSum(num);
-Console.Write($"The Sum of the elements of Number {num} is {result}");
-*/
-
-
-
-// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
-
-int[] CreateArray(int length)
-{
-    int[] array = new int[length];
-
-    for(int i = 0; i < length; i++)
-    {
-        Console.Write($"Input Value of {i + 1} element: ");
-        array[i] = Convert.ToInt32(Console.ReadLine());
-    }
+    for(int i = 0; i < array.Length; i++)
+        array[i] = new Random().Next(min, max);
+    
     return array;
 }
 
-void ShowArray(int []array)
+void ShowArray(int[] array)
 {
     for(int i = 0; i < array.Length; i++)
+    {
         Console.Write(array[i] + " ");
+    }
+    Console.WriteLine();
 }
 
-Console.Write("Input the Array size: ");
+int EvenNumbers(int[] myArray)
+{
+    int count = 0;
+    for(int i = 0; i < myArray.Length; i++)
+    {
+        if(myArray[i] % 2 == 0)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+Console.Write("Input Number of Elements: ");
 int length = Convert.ToInt32(Console.ReadLine());
 
-int[] myArray = CreateArray(length);
+int[] myArray = CreateRandomArray(length);
 ShowArray(myArray);
+
+int result = EvenNumbers(myArray);
+Console.Write("The number of even positive elements in the array is " + result);

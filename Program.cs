@@ -33,6 +33,7 @@ ShowArray(myArray);
 */
 
 
+/*
 // Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
 
 int[,] CreateRandom2dArray(int rows, int columns, int min, int max)
@@ -75,3 +76,58 @@ int max = Convert.ToInt32(Console.ReadLine());
 
 int[,] myArray = CreateRandom2dArray(rows, columns, min, max);
 Show2dArray(myArray);
+*/
+
+
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+int[,] CreateRandom2dArray(int rows, int columns)
+{
+    int[,] array = new int[rows, columns];
+        for(int i = 0; i < rows; i++)
+            for(int j = 0; j < columns; j++)
+                array[i, j] = new Random().Next(1, 10);
+    return array;
+}
+
+void ShowArray(int[,] myArray)
+{
+    for(int i = 0; i < myArray.GetLength(0); i++)
+    {
+        for(int j = 0; j < myArray.GetLength(1); j++)
+            Console.Write(myArray[i,j] + "\t");
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+double[] AverageArray(int[,] array)
+{
+    double[] average = new double[array.GetLength(1)];
+    for(int j = 0; j < array.GetLength(1); j++)
+    {
+        double sum = 0;
+        for(int i = 0; i < array.GetLength(0); i++)
+            sum += array[i,j];
+        average[j] = Math.Round(sum / array.GetLength(0), 2);
+    }
+    return average;
+}
+
+void ShowAverage(double[] average)
+{
+    for(int i = 0; i < average.Length; i++)
+    
+       Console.Write(average[i] + " ");
+    
+    Console.WriteLine();	
+}
+
+Console.Write("Input number of rows: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input number of columns: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+
+int[,] myArray = CreateRandom2dArray(rows, columns);
+ShowArray(myArray);
+ShowAverage(AverageArray(myArray));

@@ -56,6 +56,7 @@ WriteArray(array);
 */
 
 
+/*
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 
 int SumLineElements(int[,] array, int i)
@@ -117,3 +118,67 @@ for(int i = 1; i < array.GetLength(0); i++)
 }
 Console.WriteLine();
 Console.WriteLine($"{minSumLine + 1} - строкa с наименьшей суммой элементов({sumLine}).");
+*/
+
+
+// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+
+void MultiplyMatrix(int[,] firstMartrix, int[,] secomdMartrix, int[,] resultMatrix)
+{
+  for(int i = 0; i < resultMatrix.GetLength(0); i++)
+    for(int j = 0; j < resultMatrix.GetLength(1); j++)
+    {
+      int sum = 0;
+      for(int k = 0; k < firstMartrix.GetLength(1); k++)
+        sum += firstMartrix[i,k] * secomdMartrix[k,j];
+    resultMatrix[i,j] = sum;
+    }
+}
+
+int InputNumbers(string input)
+{
+    Console.Write(input);
+    int output = Convert.ToInt32(Console.ReadLine());
+    return output;
+}
+
+void CreateArray(int[,] array, int range)
+{
+  for(int i = 0; i < array.GetLength(0); i++)
+    for(int j = 0; j < array.GetLength(1); j++)
+      array[i, j] = new Random().Next(range + 1);
+}
+
+void ShowArray(int[,] array)
+{
+  for(int i = 0; i < array.GetLength(0); i++)
+  {
+    for(int j = 0; j < array.GetLength(1); j++)
+    {
+      Console.Write(array[i,j] + " ");
+    }
+    Console.WriteLine();
+  }
+}
+
+Console.WriteLine($"Введите размеры матриц и диапазон случайных значений:");
+int m = InputNumbers("Введите число строк 1-й матрицы: ");
+int n = InputNumbers("Введите число столбцов 1-й матрицы (и строк 2-й): ");
+int p = InputNumbers("Введите число столбцов 2-й матрицы: ");
+int range = InputNumbers("Введите диапозон значений от 1 до: ");
+
+int[,] firstMartrix = new int[m, n];
+CreateArray(firstMartrix, range);
+Console.WriteLine("Первая матрица:");
+ShowArray(firstMartrix);
+
+int[,] secomdMartrix = new int[n, p];
+CreateArray(secomdMartrix, range);
+Console.WriteLine("Вторая матрица:");
+ShowArray(secomdMartrix);
+
+int[,] resultMatrix = new int[m,p];
+
+MultiplyMatrix(firstMartrix, secomdMartrix, resultMatrix);
+Console.WriteLine("Произведение матриц:");
+ShowArray(resultMatrix);
